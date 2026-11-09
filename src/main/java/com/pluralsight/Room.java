@@ -2,52 +2,54 @@ package com.pluralsight;
 
 public class Room {
 
-    int getNumberOfBeds;
-    double getPrice;
-    boolean isOccupied;
-    boolean isDirty;
-    boolean isAvailable;
+    private int numberOfBeds;
+    private double price;
+    private boolean occupied;
+    private boolean dirty;
 
-    public Room(int getNumberOfBeds, double getPrice, boolean isOccupied, boolean isDirty, boolean isAvailable) {
-        this.getNumberOfBeds = getNumberOfBeds;
-        this.getPrice = getPrice;
-        this.isOccupied = isOccupied;
-        this.isDirty = isDirty;
-        this.isAvailable = isAvailable;
+    public Room() {
+        this.numberOfBeds = 2;
+        this.price = 300;
+        this.occupied = false;
+        this.dirty = false;
     }
 
-
-    public int getGetNumberOfBeds() {
-        return getNumberOfBeds;
+    public Room(int numberOfBeds, double price, boolean occupied, boolean dirty) {
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.occupied = occupied;
+        this.dirty = dirty;
     }
 
-    public void setGetNumberOfBeds(int getNumberOfBeds) {
-        this.getNumberOfBeds = getNumberOfBeds;
+    public int getNumberOfBeds() {
+        return numberOfBeds;
     }
 
-    public double getGetPrice() {
-        return getPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setGetPrice(double getPrice) {
-        this.getPrice = getPrice;
+    public boolean isOccupied() {
+        return occupied;
     }
 
-    public void setOccupied(boolean occupied) {
-        isOccupied = occupied;
+    public boolean isDirty() {
+        return dirty;
     }
 
-    public void setDirty(boolean dirty) {
-        isDirty = dirty;
-    }
+    public boolean isAvailable() {
 
-    public boolean setAvailable(boolean isDirty, boolean isOccupied) {
-
-        if(!isDirty && !isOccupied);
-        return isAvailable;
+        return (!this.occupied && !this.dirty);
 
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Room{" +
+                "numberOfBeds=" + numberOfBeds +
+                ", price=" + price +
+                ", occupied=" + occupied +
+                ", dirty=" + dirty +
+                '}';
     }
+}
