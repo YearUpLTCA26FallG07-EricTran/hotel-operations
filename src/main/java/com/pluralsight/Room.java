@@ -42,14 +42,41 @@ public class Room {
         return (!this.occupied && !this.dirty);
 
     }
+    public void checkIn() {
+        if (isAvailable()) {
+            this.occupied = true;
+            this.dirty = true;
+
+
+        }
+
+    }
 
     @Override
     public String toString() {
-        return "Room{" +
-                "numberOfBeds=" + numberOfBeds +
-                ", price=" + price +
-                ", occupied=" + occupied +
-                ", dirty=" + dirty +
-                '}';
+                return "Room{" +
+                        "numberOfBeds=" + numberOfBeds +
+                        ", price=" + price +
+                        ", occupied=" + occupied +
+                        ", dirty=" + dirty +
+                        '}';
+            }
+
+
+
+
+    public void checkOut() {
+        if (isOccupied()) {
+            this.occupied = false;
+            this.dirty = true;
+
+        }
+
+    }
+
+    public void cleanRoom() {
+        if (!isOccupied()) {
+            this.dirty = false;
+        }
     }
 }
